@@ -6,6 +6,7 @@ package com.bridgelabz;
  * 1. We are first adding the node to the LinkedList at the last.
  * 2. We have also created method addFirst to add node first i.e before the current node
  * 3. Then we have created the printList method to print the LinkedList  
+ * 4. We have created the method insertBetween to add node between at specific location
  */
 public class LinkedListServices {
 	Node head;
@@ -77,5 +78,30 @@ public class LinkedListServices {
 			currNode = currNode.next;
 		}
 		 System.out.println("NULL");
+	}
+	
+	/**
+	 * [4] Method to print the node in a specific location
+	 * 1. First we pass the before node and data. The node we pass is the node before which we have to add the data.
+	 * 2. Then we assign the currNode as head
+	 * 3. Then we create a new node of the data
+	 * 4. Then we iterate in the list till we find the before node.
+	 * 5. Once we find the before node then we assign the currNode next to newNode.next
+	 * 6. And currNode.next to newNode
+	 * @param before : Here we will pass the node after which we have to add the new node
+	 * @param data : Here we are passing the data
+	 */
+	public void insertBetween(int before, int data) {
+		Node currNode = head;
+		Node newNode = new Node(data);
+		
+		while(currNode.data != before) {
+			currNode = currNode.next;
+		}
+		//assigning the newNode.next which is null to
+		newNode.next = currNode.next;
+		currNode.next = newNode;
+		System.out.println("Inserted value " + data + " after node value " + before);
+		
 	}
 }
