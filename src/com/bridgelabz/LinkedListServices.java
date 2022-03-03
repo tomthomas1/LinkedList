@@ -9,6 +9,7 @@ package com.bridgelabz;
  * 4. We have created the method insertBetween to add node between at specific location
  * 5. Method to delete the first node
  * 6. Method to delete the last element of the LinkedList
+ * 7. Method to find the node in the LinkedList
  */
 public class LinkedListServices {
 	Node head;
@@ -150,5 +151,30 @@ public class LinkedListServices {
 			}
 		System.out.println("Successfully deleted the last node " + lastNode.data);
 		secondLast.next = null;
+	}
+	
+	/**
+	 * [7] Method to find the node in the LinkedList
+	 * 1. Here we make the currNode as head
+	 * 2. And then we traverse in the LinkedList to find the data
+	 * 3. if currNode data is equal to the data passed as input then node found
+	 * 4. If node not found in the LinkedList then we return null
+	 * @param data : we pass the data
+	 * @return: if data found then we return the node or else return null
+	 */
+	public Node findNode(int data) {
+		Node currNode = head;
+		
+		while(currNode != null) {
+			if(currNode.data == data) {
+				System.out.println(" Node found for the value " + data);
+				return currNode;
+			}
+			
+			currNode = currNode.next;
+		}
+		System.out.println(" Sorry!! Unable to find the node of value " + data);
+		return null;
+		
 	}
 }

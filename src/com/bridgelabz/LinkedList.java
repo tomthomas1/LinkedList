@@ -12,16 +12,17 @@ public class LinkedList {
 		LinkedListServices list = new LinkedListServices(); 
 		/**
 		 * Here we are calling the add method to add node
-		 * We used deletLast method to delete the Last node 
-		 *  Final Sequence: 56->30
+		 * We used findNode method search for specific node 
+		 *  
 		 */
 		list.add(56);
 		list.add(30);
 		list.add(70);
 		list.printList();
 	
-		list.deleteLast();
-		list.printList();
+		list.findNode(30);
+		list.findNode(80);
+		
 		
 }
 }
