@@ -7,6 +7,7 @@ package com.bridgelabz;
  * 2. We have also created method addFirst to add node first i.e before the current node
  * 3. Then we have created the printList method to print the LinkedList  
  * 4. We have created the method insertBetween to add node between at specific location
+ * 5. Method to delete the first node
  */
 public class LinkedListServices {
 	Node head;
@@ -103,5 +104,18 @@ public class LinkedListServices {
 		currNode.next = newNode;
 		System.out.println("Inserted value " + data + " after node value " + before);
 		
+	}
+	
+	/**
+	 * Here we will change the head to next node and the first node will be removed by the garbage collector
+	 * Hence we used here head.next
+	 */
+	public void deleteFirst() {
+		if(head == null) {
+			System.out.println("The list is empty");
+			return;
+		}
+		System.out.println("Successfully deleted the first node " + head.data);
+		head = head.next;
 	}
 }
