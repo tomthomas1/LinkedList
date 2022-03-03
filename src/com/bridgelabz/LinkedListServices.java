@@ -10,6 +10,8 @@ package com.bridgelabz;
  * 5. Method to delete the first node
  * 6. Method to delete the last element of the LinkedList
  * 7. Method to find the node in the LinkedList
+ * 8. Method to delete a specific node
+ * 9. Method to find the size of the LinkedList
  */
 public class LinkedListServices {
 	Node head;
@@ -176,5 +178,47 @@ public class LinkedListServices {
 		System.out.println(" Sorry!! Unable to find the node of value " + data);
 		return null;
 		
+	}
+	
+	/**
+	 * [8] Method to delete specific node from Linked List
+	 * 1. Here we take 2 variable currNode and prevNode and assign currNode and prevNode to head
+	 * 3. Then we have checked if currNode data is equal to the data given
+	 * 4. If equal then we are assigning the prevNode next to the currNode next
+	 * 6. we are changing the prevNode to currNode and currNode as currNode.next
+	 * 7. If not found that we are displaying the alert   
+	 * @param data
+	 */
+	public void deleteNode(int data) {
+		Node currNode = head;
+		Node prevNode = head;
+		
+		while(currNode != null) {
+			if(currNode.data == data) {
+				prevNode.next = currNode.next;
+				return;
+			}
+			prevNode = currNode;
+			currNode = currNode.next;
+		} 
+		System.out.println(" Unable to find the node for value " + data);
+		
+	}
+	
+	/**
+	 * [9] Method to display the size of the LinkedList
+	 * 1. Here we are traversing in the LinkedLst with currNode.next and incrementing the counter
+	 * 2. So the total node in the LinkedList will be the total value of counter
+	 */
+	public void size() {
+		Node currNode = head;
+		int count = 0;
+		
+		while(currNode != null) {
+			count++;
+			currNode = currNode.next;
+		}
+		
+		System.out.println("The size of the LinkedList is : "+ count);
 	}
 }

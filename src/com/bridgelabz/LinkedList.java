@@ -18,11 +18,13 @@ public class LinkedList {
 		 */
 		list.add(56);
 		list.add(30);
+		list.add(40);
 		list.add(70);
 		list.printList();
 	
-		list.insertBetween(30, 40);
+		list.deleteNode(40);
 		list.printList();
+		list.size();
 		
 		
 }
