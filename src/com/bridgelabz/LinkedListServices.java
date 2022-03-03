@@ -8,6 +8,7 @@ package com.bridgelabz;
  * 3. Then we have created the printList method to print the LinkedList  
  * 4. We have created the method insertBetween to add node between at specific location
  * 5. Method to delete the first node
+ * 6. Method to delete the last element of the LinkedList
  */
 public class LinkedListServices {
 	Node head;
@@ -107,6 +108,7 @@ public class LinkedListServices {
 	}
 	
 	/**
+	 * [5] Method to delete the first element of LinkedList
 	 * Here we will change the head to next node and the first node will be removed by the garbage collector
 	 * Hence we used here head.next
 	 */
@@ -117,5 +119,36 @@ public class LinkedListServices {
 		}
 		System.out.println("Successfully deleted the first node " + head.data);
 		head = head.next;
+	}
+	
+	/**
+	 * [6] Method to delete the last element of the LinkedList
+	 * Here we traverse through the LinkedList and make the second last next node as null.
+	 * 1. First we check if the head is null
+	 * 2. Second we check if there is only one node, then we make the head as null
+	 * 3. Here we make the secondLast node as head and lastNode as head.next
+	 * 4. And then we traverse in linkedList till the lastNode next node is not null
+	 * 5. Once we get the last and secondLast node we make the secondLast.next as null
+	 */
+	public void deleteLast() {
+		if(head == null) {
+			System.out.println("The list is empty");
+			return;
+		}
+		
+		if(head.next == null) {
+			head = null;
+			return;
+		}
+		
+		// Here we have used two variable secondLast and Last to traverse in the Linked List and from Point 3
+		Node secondLast = head;
+		Node lastNode = head.next;
+		while(lastNode.next != null) {
+			lastNode = lastNode.next;
+			secondLast = secondLast.next;
+			}
+		System.out.println("Successfully deleted the last node " + lastNode.data);
+		secondLast.next = null;
 	}
 }

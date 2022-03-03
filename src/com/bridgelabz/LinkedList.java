@@ -12,15 +12,15 @@ public class LinkedList {
 		LinkedListServices list = new LinkedListServices(); 
 		/**
 		 * Here we are calling the add method to add node
-		 * We used deletFirst method to delete the first node 
-		 *  Final Sequence: 30->70
+		 * We used deletLast method to delete the Last node 
+		 *  Final Sequence: 56->30
 		 */
 		list.add(56);
 		list.add(30);
 		list.add(70);
 		list.printList();
 	
-		list.deleteFirst();
+		list.deleteLast();
 		list.printList();
 		
 }
