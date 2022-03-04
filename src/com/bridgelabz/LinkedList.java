@@ -20,12 +20,14 @@ public class LinkedList {
 		list.add(30);
 		list.add(40);
 		list.add(70);
+		
 		list.printList();
 	
 		list.deleteNode(40);
 		list.printList();
 		list.size();
-		
+		list.sortList();
+		list.printList();
 		
 }
 }

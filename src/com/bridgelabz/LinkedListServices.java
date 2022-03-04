@@ -12,6 +12,7 @@ package com.bridgelabz;
  * 7. Method to find the node in the LinkedList
  * 8. Method to delete a specific node
  * 9. Method to find the size of the LinkedList
+ * 10. Method to sort the LinkedList in Ascending order.
  */
 public class LinkedListServices {
 	Node head;
@@ -221,4 +222,40 @@ public class LinkedListServices {
 		
 		System.out.println("The size of the LinkedList is : "+ count);
 	}
+	
+	/**
+	 * [10] Method sortList  will sort the nodes of the list in ascending order.
+	 * 1. Define a node current which will point to head.
+	 * 2. Define another node index which will point to node next to current.
+	 * 3. Compare data of current and index node. If current's data is greater than the index's data then, swap the data between them.
+	 * 4.Current will point to current.next and index will point to index.next.
+	 * 5. Continue this process until the entire list is sorted.
+	 */
+	public void sortList() {  
+        //Node current will point to head  
+        Node currentNode = head, nextNode = null;  
+        int temp;  
+          
+        if(head == null) {  
+            return;  
+        }  
+        else {  
+            while(currentNode != null) {  
+                //Node index will point to node next to current  
+                nextNode = currentNode.next;  
+                  
+                while(nextNode != null) {  
+                    //If current node's data is greater than index's node data, swap the data between them  
+                    if(currentNode.data > nextNode.data) {  
+                        temp = currentNode.data;  
+                        currentNode.data = nextNode.data;  
+                        nextNode.data = temp;  
+                    }  
+                    
+                    nextNode = nextNode.next;  
+                }  
+                currentNode = currentNode.next;  
+            }      
+        }  
+    }  
 }
